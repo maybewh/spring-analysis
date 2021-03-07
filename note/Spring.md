@@ -1971,9 +1971,11 @@ if (parentBeanFactory != null && !containsBeanDefinition(beanName)) {
     String nameToLookup = originalBeanName(name);
     if (args != null) {
         // Delegation to parent with explicit args.
+        // 委派父容器根据指定名称和显示参数查找
         return (T) parentBeanFactory.getBean(nameToLookup, args);
     } else {
         // No args -> delegate to standard getBean method.
+        // 委派父容器根据指定名称和类型查找
         return parentBeanFactory.getBean(nameToLookup, requiredType);
     }
 }
@@ -1992,7 +1994,7 @@ if (dependsOn != null) {
             throw new BeanCreationException(mbd.getResourceDescription(), beanName,
             "Circular depends-on relationship between '" + beanName + "' and '" + dependsOnBean + "'");
         }
-        registerDependentBean(dependsOnBean, beanName);
+        registerDependentBean(dependsOnBean, beanName); // 注册被依赖的Bean
         getBean(dependsOnBean);
     }
 }

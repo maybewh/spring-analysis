@@ -15,6 +15,10 @@ public class Bootrap {
         SimpleBean simpleBean = context.getBean(SimpleBean.class);
         System.out.println(simpleBean.getStudent().getName());
         System.out.println(Arrays.toString(context.getBeanDefinitionNames()));
+
+        // 测试根据Type获取对象
+        TestInterface testInterface = (TestInterface) context.getBean("test1");
+        testInterface.test1();
     }
 
 }

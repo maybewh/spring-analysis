@@ -1,6 +1,7 @@
 package base;
 
 import annotation.Init;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * SimpleBean

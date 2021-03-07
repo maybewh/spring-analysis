@@ -7,6 +7,8 @@ import org.springframework.aop.framework.AopContext;
  */
 public class SimpleAopBean {
 
+    private AutoWiredBean autoWiredBean;
+
     public void boo() {
         System.out.println("testA执行");
         testB();
@@ -21,4 +23,11 @@ public class SimpleAopBean {
         System.out.println("testC执行");
     }
 
+    public AutoWiredBean getAutoWiredBean() {
+        return autoWiredBean;
+    }
+
+    public void setAutoWiredBean(AutoWiredBean autoWiredBean) {
+        this.autoWiredBean = autoWiredBean;
+    }
 }
